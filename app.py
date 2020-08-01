@@ -1,3 +1,4 @@
+#%%
 import datetime as dt
 import numpy as np
 import pandas as pd
@@ -9,6 +10,7 @@ from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
 
+#%%
 engine = create_engine("sqlite:///hawaii.sqlite")
 
 Base = automap_base()
@@ -21,7 +23,7 @@ Station = Base.classes.station
 session = Session(engine)
 
 app = Flask(__name__)
-
+#%%
 import app
 
 print("example __name__ = %s", __name__)
@@ -84,13 +86,15 @@ def stats(start=None, end=None):
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
 
     if not end:
-	    results = session.query(*sel).\
-		    filter(Measurement.date <= start).all()
-    temps = list(np.ravel(results))
-    return jsonify(temps)
-
+        results = session.query(*sel).\
+            filter(Measurement.date <= start).all()
+        temps = list(np.ravel(results))
+        return jsonify(temps)
     results = session.query(*sel).\
         filter(Measurement.date >= start).\
-	    filter(Measurement.date <= end).all()
+        filter(Measurement.date >= end).all()
     temps = list(np.ravel(results))
     return jsonify(temps=temps)
+
+
+# %%
