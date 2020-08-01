@@ -4,3 +4,8 @@ After reviewing the statistical analysis for June and December in the data set, 
 ###
 To further give insight to the weather patterns, I would also recommend reviewing the temperatures during the year compared to the rain. Sometimes it rains but it is still hot outside, not exactly deterring customers from eating ice cream.  December is typically the low season for Hawaii, but with any business that caters to tourists there will be off-peak times. I would also review the data to see how he rainfall has changed by month over the years to look for consistencies and patterns.
 
+### June Statistical Data
+![](https://github.com/sarastjean/surfs_up/blob/master/June_Stats_Rain.JPG)
+
+### December Statistical Data
+![](https://github.com/sarastjean/surfs_up/blob/master/Dec_Stats_Rain.JPG)
